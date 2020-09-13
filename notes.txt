@@ -1,1 +1,4 @@
 1. almost everything in JS is an object (name value pairs)
+2. primitive value types: string, bool, num, null, undefined, symbol
+3. reference type: object (has a pointer, then space where object is stored in memory)
+4. variable: something that can change it's value/ holds a value
