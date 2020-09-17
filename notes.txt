@@ -4,3 +4,4 @@
 4. variable: something that can change it's value/ holds a value
 5. object literal notation: {a:10, b:true, c:"hello"} (an array of key:value pairs separated by commas and surrounded by curly braces)
 6. variable declaration: var, let const (last 2 from ES6)
+7. JS is a dynamically (not static) typed language!!
