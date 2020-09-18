@@ -90,4 +90,7 @@ objectWithNestedObject.nestedObject.a = null;
 objectWithNestedObject.nestedObject['b'] = true;
 const newPropName = 'c';
 objectWithNestedObject.nestedObject[newPropName] = 'hello';
+
 console.log(objectWithNestedObject);
+
+//GLOBAL OBJECTS: window(web browsers) and global(node.js)
