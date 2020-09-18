@@ -1,6 +1,8 @@
 // object is a function
 
 //left side is property and right side is property value
+
+// EXERCISE 1*****************************
 const myCity = {
   city: 'Alexandria',
   popular: true,
@@ -24,6 +26,7 @@ delete myHobbies.learning;
 
 console.log(myHobbies);
 
+// EXERCISE 2*****************************
 const myFamily = {
   mom: 'ruth',
   husband: 'jon',
@@ -49,6 +52,7 @@ console.log(myLocation.info.popular); //true
 delete myLocation.info['popular'];
 console.log(myLocation);
 
+// EXERCISE 3*****************************
 myObject = {
   a: '10',
   b: null,
@@ -63,3 +67,27 @@ myObject['new' + 'Property' + 'Name'] =
   'Value for dynamically computed property name';
 
 console.log(myObject);
+
+///EXAMPLE 4 --> missing properties*****************************
+const myObject2 = {
+  a: 3,
+  b: true,
+};
+
+console.log(myObject2.c); //undefined
+// console.log(nonDeclaredVar); //uncaught reference error - not defined
+myObject2.newPropertyWithUndefinedValue = undefined; //don't do this!!use null instead
+
+console.log(
+  'myObject2 new property: ',
+  myObject2.newPropertyWithUndefinedValue
+);
+
+// EXAMPLE 5
+const objectWithNestedObject = {};
+objectWithNestedObject.nestedObject = {};
+objectWithNestedObject.nestedObject.a = null;
+objectWithNestedObject.nestedObject['b'] = true;
+const newPropName = 'c';
+objectWithNestedObject.nestedObject[newPropName] = 'hello';
+console.log(objectWithNestedObject);
