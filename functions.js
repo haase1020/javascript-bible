@@ -105,13 +105,13 @@
 
 // callback function CHALLENGE from lesson 53 Function Expressions
 
-let num = 1;
+// let num = 1;
 
-const myInterval = setInterval(function () {
-  console.log(`here is message number ${num}`);
-  num++;
-}, 2000);
+// const myInterval = setInterval(function () {
+//   console.log(`here is message number ${num}`);
+//   num++;
+// }, 2000);
 
-setTimeout(function () {
-  clearInterval(myInterval);
-}, 8000);
+// setTimeout(function () {
+//   clearInterval(myInterval);
+// }, 8000);
