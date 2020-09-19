@@ -65,3 +65,39 @@ function myFunction6(a) {
 }
 
 myFunction6(10);
+
+// function declaration vs. function expression
+
+//fn declaration
+function myFuncDeclaration(a, b) {
+  let c;
+  a = a + 1;
+  c = a + b;
+  return c;
+}
+
+// fn expression --> always anonymous --> can't be used standalone
+// function(a,b) {
+//     let c;
+//     a = a + 1;
+//     c = a + b;
+//     return c;
+// }
+
+// function expression assigned to the variable
+// variable is myAwesomeFunction and fn expression is the anon fn on the right
+const myAwesomeFunction = function (a, b) {
+  let c;
+  a = a + 1;
+  c = a + b;
+  console.log(c);
+  return c;
+};
+
+myAwesomeFunction(5, 3);
+
+// function expression as argument in the function call
+setTimeout(function () {
+  //function is an anon fn expression
+  console.log('delayed message');
+}, 1000);
