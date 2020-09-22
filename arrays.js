@@ -31,3 +31,5 @@ myArray3.unshift(0); //[0,1,2,3,4]
 // '===' compares type AND value (in array case, the pointer)
 console.log(myArray2 === myArray3); // false because different pointers
 console.log(myArray2.toString() === myArray3.toString()); //true because now comparing primitive type "string" //only if order is same
+
+
