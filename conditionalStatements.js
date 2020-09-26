@@ -40,5 +40,13 @@ switch (month) {
 }
 
 /*
-ternary operator
+ternary operator:
+expression with ternary operator PRODUCES A VALUE
 */
+let value = 11;
+value ? console.log('true') : console.log('false');
+
+let color = 'green';
+if (color) {
+  console.log(color);
+}
