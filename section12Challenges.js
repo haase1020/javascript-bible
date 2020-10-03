@@ -13,10 +13,11 @@
 // console.log('function call has just ended');
 
 //closures
-
 function outerFn(mult) {
   const a = 10;
+  console.log('mult in outerFn', mult);
   function innerFn(b) {
+    console.log('b in inner function', b);
     console.dir(innerFn);
     return (a + b) * mult;
   }
@@ -24,8 +25,8 @@ function outerFn(mult) {
   return innerFn;
 }
 
-const res = outerFn(2);
-console.log(res(20));
+const res1 = outerFn(2);
+console.log(res1(10));
 
 const res2 = outerFn(3);
 console.log(res2(20));
