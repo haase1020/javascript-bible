@@ -16,17 +16,17 @@ const fn1 = function(a, b) {
 
 console.log(fn1(4,5)) // 9
 
-// ✔️ IIFE
-// (function(a, b) {
-//     // console.log("IIFE is executed!")
-//     return a + b;
-// })(5,6);
+// // ✔️ IIFE
+// // (function(a, b) {
+// //     console.log("IIFE is executed!");
+// //     return a + b;
+// // })(5,6)
 
-// ✔️ callback function
-setTimeout(function(a, b) {
-    console.log("CBexecuted!")
-    console.log(a + b)
-}, 1000);
+// // ✔️ callback function
+// setTimeout(function(a, b) {
+//     console.log("CBexecuted!")
+//     console.log(a + b)
+// }, 1000);
 
 // // ✔️ Arrow functions are anonymous!! They are all expressions!!
 // // ✔️ syntax:
@@ -57,3 +57,38 @@ setTimeout(function(a, b) {
 // }
 
 // 📗 Practice: Arrow Functions 
+
+// 🌳 example 1
+const sum = (a, b) => a+ b;
+console.log(sum(1, 2)) // must call function after you have declared it
+
+// 🌳 example 2
+const post = {
+    title: "sample title",
+    comments: 6,
+    shared: true,
+    published: true,
+    postId: 1234
+}
+
+
+//explicit return of object
+// const processedPost = (post) => {
+//     return {
+//         title: post.title,
+//         comments: post.comments,
+//         popular: post.comments > 5 ? true: false
+//     }
+// };
+
+// 💯 implicit return of the object 
+
+const processedPost = (post) => ({
+
+        title: post.title,
+        comments: post.comments,
+        popular: post.comments > 5 ? true: false
+    
+});
+
+console.log(processedPost(post));
