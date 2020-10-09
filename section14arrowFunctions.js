@@ -27,3 +27,33 @@ setTimeout(function(a, b) {
     console.log("CBexecuted!")
     console.log(a + b)
 }, 1000);
+
+// // ✔️ Arrow functions are anonymous!! They are all expressions!!
+// // ✔️ syntax:
+
+// //implicit return of a + b
+// (a, b) => a + b  //no semicolon because expression
+// // 😉 the same thing:
+// // explicit return of a + b
+// (a, b) => {
+//     return a + b;  //here you have semicolon because you use return statement
+// }
+// // omit () without one parameter
+// a => a * a  
+// // () are mandatory without any parameters
+// () => 2
+// //implicit return of object
+// (a, b) => ({
+//     a1: a,
+//     b1: b
+// })  //if you add parantheses is becomes an object literal. Needed for creating an object
+
+// //explicit return of object
+// (a, b) => {
+//    return {
+//     a1: a,
+//     b1: b
+//    } 
+// }
+
+// 📗 Practice: Arrow Functions 
