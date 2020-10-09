@@ -16,11 +16,11 @@ const fn1 = function(a, b) {
 
 console.log(fn1(4,5)) // 9
 
-// // ✔️ IIFE
-// // (function(a, b) {
-// //     console.log("IIFE is executed!");
-// //     return a + b;
-// // })(5,6)
+// // // ✔️ IIFE
+// (function(a, b) {
+//     console.log("IIFE is executed!");
+//     return a + b;
+// })(5,6)
 
 // // ✔️ callback function
 // setTimeout(function(a, b) {
@@ -92,3 +92,13 @@ const processedPost = (post) => ({
 });
 
 console.log(processedPost(post));
+
+// 🌳 example 3
+(() => {
+    function greet() {
+        return "Hey there!"; //window.greet() in console to access
+    }
+    console.log(this);
+    this.greet = greet;
+    return this;
+})();
