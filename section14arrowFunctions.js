@@ -102,3 +102,50 @@ console.log(processedPost(post));
     this.greet = greet;
     return this;
 })();
+
+
+// 🌳 example 4
+
+const sum2 = (a,b) => a + b;
+console.log("sum function",sum2 (1,2))
+
+// 🌳 example 5
+
+const postIt = {
+    title:"a title",
+    comments: 10,
+    shared: true,
+    published: true,
+    postId: 121
+}
+
+// // explicit return of the object
+// const producePost = (postIt) => {
+//     return {
+//         title: postIt.title,
+//         comments: postIt.Ccomments,
+//         popular: postIt.comments > 5 ? true: false
+//     }
+// }
+
+// implicit return of the object: preferred way
+const producePost = (postIt) => ({
+
+        title: postIt.title,
+        comments: postIt.Ccomments,
+        popular: postIt.comments > 5 ? true: false
+})
+
+console.log(producePost(postIt))
+
+
+// 🌳 example 6
+// (() => {
+//     function greet() {
+//         return "life is good";
+//     }
+//     console.log(this);
+//     this.greet = greet;
+//     return this; //appending greet to the global window object
+// })(); // then input window.greet() in console
+
