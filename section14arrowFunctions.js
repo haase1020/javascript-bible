@@ -149,3 +149,22 @@ console.log(producePost(postIt))
 //     return this; //appending greet to the global window object
 // })(); // then input window.greet() in console
 
+
+/*
+  ✨ arrow functions don't have own "this". "this" in arrow functions is 
+always statically defined by the surroundign lexical scope. ✨
+*/
+
+// 🌳 example 1
+const num = {
+    value: 100,
+    info: () => {
+        console.log(this); // num object
+        return this.value
+    }
+    // info: function info() {
+    //     console.log(this);
+    //     return this.value;
+    // }
+};
+console.log(num.info())
