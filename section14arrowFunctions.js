@@ -1,4 +1,13 @@
 // //✔️ ⏱️ 💻 😉 🌳 📗 💯 ✨
+/*
+💯
+Summary: 
+Arrows functions are anonymous
+Arrows functions are expressions
+Arrows functions don't have own "this"
+💯
+*/
+
 
 // // ✔️ function declaration
 // function fn(a, b) {
@@ -171,38 +180,61 @@ always statically defined by the surroundign lexical scope. ✨
 // };
 // console.log(num.info())
 
-// 🌳 challenge # 150
-const createButton =(title) => {
-  const btn = document.createElement("button");
-let numClicks = 0; //closed variable in function
+// // 🌳 challenge # 150
+// const createButton =(title) => {
+//   const btn = document.createElement("button");
+// let numClicks = 0; //closed variable in function
 
-  btn.innerHTML = title
-  // btn.onclick = function() {
-  //   console.log("you clicked me")
-  //   btn.innerHTML = `button clicked ${numClicks} times`;
-  // };
+//   btn.innerHTML = title
+//   // btn.onclick = function() {
+//   //   console.log("you clicked me")
+//   //   btn.innerHTML = `button clicked ${numClicks} times`;
+//   // };
 
 
-  //regular function expression
-  // btn.addEventListener("click", function() {
-  //   console.log("you clicked me")
+//   //regular function expression
+//   // btn.addEventListener("click", function() {
+//   //   console.log("you clicked me")
 
-  // //"this" works in regular function
-  // // dynamically changed based on context
-  //   btn.innerHTML = `button clicked ${numClicks} times`;
-  // })
+//   // //"this" works in regular function
+//   // // dynamically changed based on context
+//   //   btn.innerHTML = `button clicked ${numClicks} times`;
+//   // })
 
-  //arrow function expression
-  btn.addEventListener("click", () => {
-    console.log("you clicked me")
-    //"this" is the window object and will not dynamically change
-    // in an arrow function
-    btn.innerHTML = `button clicked ${++numClicks} times`;
+//   //arrow function expression
+//   btn.addEventListener("click", () => {
+//     console.log("you clicked me")
+//     //"this" is the window object and will not dynamically change
+//     // in an arrow function
+//     btn.innerHTML = `button clicked ${++numClicks} times`;
     
-  })
+//   })
 
-  document.body.appendChild(btn);
+//   document.body.appendChild(btn);
+// }
+
+// createButton("click me");
+// createButton("click me too")
+
+// 🌳 arguments in the functions 🌳
+// 😉 regular function
+function sum() {
+  console.log(arguments);
+  console.log(typeof arguments);
+  console.log(Array.isArray(arguments)) //false
+  const argumentsArray= Array.from(arguments)
+  console.log(argumentsArray)
 }
 
-createButton("click me");
-createButton("click me too")
+// 😉 arrow function using rest operator (or else error)
+const sum2 =(...arguments) => {
+  console.log(arguments);
+  console.log(typeof arguments);
+  console.log(Array.isArray(arguments)) //true
+  const argumentsArray= Array.from(arguments)
+  console.log(argumentsArray)
+}
+
+
+sum (1,2,3,4,5)
+sum2 (1,2,3,4,5)
