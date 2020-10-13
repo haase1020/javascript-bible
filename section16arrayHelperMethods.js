@@ -18,19 +18,35 @@
 //     console.log(arrayInfo(element, index))
 // })
 
-// 🌳 map
-const myNumbers = [1,5,7];
-// option 1
-// let mySquareNumbers = myNumbers.map(
-//     element => element * element
-// );
+// // 🌳 map
+// const myNumbers = [1,5,7];
+// // option 1
+// // let mySquareNumbers = myNumbers.map(
+// //     element => element * element
+// // );
 
-// console.log(mySquareNumbers)
-// console.log(myNumbers)
+// // console.log(mySquareNumbers)
+// // console.log(myNumbers)
 
-//option 2
-const squareNumbers = (element, index) => {
-    console.log("element at index " + index + " is " + element);
-    return element * element;
-};
-let mySquareNUmbers = myNumbers.map(squareNumbers);
+// //option 2
+// const squareNumbers = (element, index) => {
+//     console.log("element at index " + index + " is " + element);
+//     return element * element;
+// };
+// let mySquareNUmbers = myNumbers.map(squareNumbers);
+
+
+// 🌳 map challenge
+const postsJSON = [
+    '{"postID": 123, "commentsQuantity": 2}',
+    '{"postID": 124, "commentsQuantity": 5}',
+    '{"postID": 125, "commentsQuantity": 6}',
+];
+
+var posts = [];
+for (let i = 0; i < postsJSON.length; i++) {
+    posts.push(JSON.parse(postsJSON[i]))
+}
+
+console.log(posts); //each post
+console.log(posts[0].postID)// 123
