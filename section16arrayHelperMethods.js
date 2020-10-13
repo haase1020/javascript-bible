@@ -43,10 +43,21 @@ const postsJSON = [
     '{"postID": 125, "commentsQuantity": 6}',
 ];
 
-var posts = [];
-for (let i = 0; i < postsJSON.length; i++) {
-    posts.push(JSON.parse(postsJSON[i]))
-}
 
-console.log(posts); //each post
-console.log(posts[0].postID)// 123
+// ✨ for loop option
+// var posts = [];
+// for (let i = 0; i < postsJSON.length; i++) {
+//     posts.push(JSON.parse(postsJSON[i]))
+// }
+
+// console.log(posts); //each post
+// console.log(posts[0].postID)// 123
+
+// // ✨ map option 1
+// const posts = postsJSON.map(JSON.parse);
+
+
+ // ✨ map option 2
+ const posts = postsJSON.map(post => JSON.parse(post));
+ console.log(posts); //each post
+ console.log(posts[0].postID)// 123
