@@ -59,5 +59,7 @@ const postsJSON = [
 
  // ✨ map option 2
  const posts = postsJSON.map(post => JSON.parse(post));
+
+ 
  console.log(posts); //each post
  console.log(posts[0].postID)// 123
