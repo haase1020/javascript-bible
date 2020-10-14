@@ -72,9 +72,22 @@
 
 // console.log(filteredNums)
 
-// 🌳 find: produces 1st element matching condition or undefined
-const myArray = [10, [], {}, "abc", true, 15];
+// // 🌳 find: produces 1st element matching condition or undefined
+// const myArray = [10, [], {}, "abc", true, 15];
 
-const result = myArray.find( element => typeof element === "number");
+// const result = myArray.find( element => typeof element === "number");
 
-console.log(result) // 10
+// console.log(result) // 10
+
+ // 🌳 find challenge 1
+ const posts = [
+     {postId:1355, commentsQuantity: 5},
+     {postId:5131, commentsQuantity: 13},
+     {postId:6134, commentsQuantity: 2}
+ ]
+
+ const findSinglePost = (postId, posts) => 
+ posts.find(post => post.postId === postId)
+
+ console.log(findSinglePost(6134, posts)) //6134 object
+ console.log(findSinglePost(4444, posts)) //undefined
