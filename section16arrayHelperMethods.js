@@ -79,15 +79,61 @@
 
 // console.log(result) // 10
 
- // 🌳 find challenge 1
- const posts = [
-     {postId:1355, commentsQuantity: 5},
-     {postId:5131, commentsQuantity: 13},
-     {postId:6134, commentsQuantity: 2}
- ]
+//  // 🌳 find challenge 1
+//  const posts = [
+//      {postId:1355, commentsQuantity: 5},
+//      {postId:5131, commentsQuantity: 13},
+//      {postId:6134, commentsQuantity: 2}
+//  ]
 
- const findSinglePost = (postId, posts) => 
- posts.find(post => post.postId === postId)
+//  const findSinglePost = (postId, posts) => 
+//  posts.find(post => post.postId === postId)
 
- console.log(findSinglePost(6134, posts)) //6134 object
- console.log(findSinglePost(4444, posts)) //undefined
+//  console.log(findSinglePost(6134, posts)) //6134 object
+//  console.log(findSinglePost(4444, posts)) //undefined
+
+ // 🌳 every()  // return true if elements have all property 
+ // 🌳 some() //find at least one instance of true
+
+
+//  //✨ example 1:
+//  const myNumbers = [3,-5,1,10,-7];
+//  const isPositive = element => 
+//     typeof element === 'number' && element > 0;
+
+// const positiveCheck = myNumbers.every(isPositive);
+
+// console.log(positiveCheck) //false
+
+// const somepositiveCheck = myNumbers.some(isPositive);
+
+// console.log(somepositiveCheck) //true
+
+//✨ example 2:
+const items = [
+    {
+        title: "computer",
+        quantity: 10
+    },
+    {
+        title: "phone",
+        quantity: 2
+    },
+    {
+        title: "headphones",
+        quantity: 0
+    },
+];
+
+// all items have quantity > 5
+if (items.every(item => item.quantity > 5))
+console.log("all items available") //nothing consoled
+
+// all items have quantity > 0 and some are <= 5
+if (items.every(item => item.quantity > 0) &&
+items.some(item => item.quantity <=5))
+console.log("all items may be sold soon") // console appears
+
+// all items have quantity > 5
+if (items.some(item => item.quantity ===0 ))
+console.log("some items sold out") //nothing consoled
