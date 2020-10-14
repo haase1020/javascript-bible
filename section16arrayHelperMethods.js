@@ -36,30 +36,38 @@
 // let mySquareNUmbers = myNumbers.map(squareNumbers);
 
 
-// 🌳 map challenge
-const postsJSON = [
-    '{"postID": 123, "commentsQuantity": 2}',
-    '{"postID": 124, "commentsQuantity": 5}',
-    '{"postID": 125, "commentsQuantity": 6}',
-];
+// // 🌳 map challenge
+// const postsJSON = [
+//     '{"postID": 123, "commentsQuantity": 2}',
+//     '{"postID": 124, "commentsQuantity": 5}',
+//     '{"postID": 125, "commentsQuantity": 6}',
+// ];
 
 
-// ✨ for loop option
-// var posts = [];
-// for (let i = 0; i < postsJSON.length; i++) {
-//     posts.push(JSON.parse(postsJSON[i]))
-// }
+// // ✨ for loop option
+// // var posts = [];
+// // for (let i = 0; i < postsJSON.length; i++) {
+// //     posts.push(JSON.parse(postsJSON[i]))
+// // }
 
-// console.log(posts); //each post
-// console.log(posts[0].postID)// 123
+// // console.log(posts); //each post
+// // console.log(posts[0].postID)// 123
 
-// // ✨ map option 1
-// const posts = postsJSON.map(JSON.parse);
+// // // ✨ map option 1
+// // const posts = postsJSON.map(JSON.parse);
 
 
- // ✨ map option 2
- const posts = postsJSON.map(post => JSON.parse(post));
+//  // ✨ map option 2
+//  const posts = postsJSON.map(post => JSON.parse(post));
 
  
- console.log(posts); //each post
- console.log(posts[0].postID)// 123
+//  console.log(posts); //each post
+//  console.log(posts[0].postID)// 123
+
+// 🌳 filter
+// produces a new output array
+const myNumbers = [10,20,30,40,50,4];
+
+const filteredNums = myNumbers.filter(num => num > 10);
+
+console.log(filteredNums)
