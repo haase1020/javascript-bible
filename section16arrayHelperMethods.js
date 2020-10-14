@@ -64,10 +64,17 @@
 //  console.log(posts); //each post
 //  console.log(posts[0].postID)// 123
 
-// 🌳 filter
-// produces a new output array
-const myNumbers = [10,20,30,40,50,4];
+// // 🌳 filter
+// // produces a new output array
+// const myNumbers = [10,20,30,40,50,4];
 
-const filteredNums = myNumbers.filter(num => num > 10);
+// const filteredNums = myNumbers.filter(num => num > 10);
 
-console.log(filteredNums)
+// console.log(filteredNums)
+
+// 🌳 find: produces 1st element matching condition or undefined
+const myArray = [10, [], {}, "abc", true, 15];
+
+const result = myArray.find( element => typeof element === "number");
+
+console.log(result) // 10
