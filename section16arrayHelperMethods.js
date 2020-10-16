@@ -200,19 +200,29 @@
 // console.log(arraysAreEqual(a, c)); // false
 // console.log(arraysAreEqual(a, d)); // false
 
-// 💯 challenge 3-6: check if element is in array?
+// // 💯 challenge 3-6: check if element is in array?
 
-const transport = ["Bus", "Car", "Bicycle", "Airplane"];
+// const transport = ["Bus", "Car", "Bicycle", "Airplane"];
 
-/* Create a function "elementFound" with two parameters "inputArray" and "searchElement".
-If "searchElement" is found in the "inputArray" - return "true".
-Otherwise return "false"
-Hint: Use "some" helper method to solve this
-*/
+// /* Create a function "elementFound" with two parameters "inputArray" and "searchElement".
+// If "searchElement" is found in the "inputArray" - return "true".
+// Otherwise return "false"
+// Hint: Use "some" helper method to solve this
+// */
 
-const elementFound = (inputArray, searchElement) =>
-  inputArray.some(element => element === searchElement);
+// const elementFound = (inputArray, searchElement) =>
+//   inputArray.some(element => element === searchElement);
 
-console.log(elementFound(transport, "Bus")); // true
-console.log(elementFound(transport, "Phone")); // false
-console.log(elementFound(transport, "Airplane")); // true
+// console.log(elementFound(transport, "Bus")); // true
+// console.log(elementFound(transport, "Phone")); // false
+// console.log(elementFound(transport, "Airplane")); // true
+
+
+// 🌳 includes()
+
+const myArray = [10, 'hi', true, undefined, null, [1,2], {}];
+
+console.log(myArray.includes(true))
+console.log(myArray.includes('hi', 0))// false since 'hi' is index 1
+console.log(myArray.includes([1,2])) //returns false since this is a pointer
+console.log(myArray.includes({})) //returns false since this is a pointer
