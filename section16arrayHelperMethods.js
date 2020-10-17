@@ -227,55 +227,84 @@
 // console.log(myArray.includes([1,2])) //returns false since this is a pointer
 // console.log(myArray.includes({})) //returns false since this is a pointer
 
-// 💯 challenge 3-7: includes() with Array or Object
-const tags = [
-  ["javascript", "es6"],
-  ["css", "flexbox"],
-  ["html", "web-browser"]
-];
+// // 💯 challenge 3-7: includes() with Array or Object
+// const tags = [
+//   ["javascript", "es6"],
+//   ["css", "flexbox"],
+//   ["html", "web-browser"]
+// ];
 
-const fruits = [
-  { title: "Orange", quantity: 10 },
-  { title: "Banana", quantity: 5 },
-  { title: "Apple", quantity: 25 }
-];
+// const fruits = [
+//   { title: "Orange", quantity: 10 },
+//   { title: "Banana", quantity: 5 },
+//   { title: "Apple", quantity: 25 }
+// ];
 
-const primitiveTypesArray = [
-  25,
-  "x",
-  true,
-  undefined,
-  null
-];
+// const primitiveTypesArray = [
+//   25,
+//   "x",
+//   true,
+//   undefined,
+//   null
+// ];
 
-/* Create a function "elementIsIncluded" with two parameters "searchElement" and "array". 
-If type of the "searchElement" is object or array, you need to convert each element in the "array" to the string and then apply "includes" method with argument that will be also converted to the string.
-If type of the "searchElement" is not an object or array - simply apply "includes" method and return result
+// /* Create a function "elementIsIncluded" with two parameters "searchElement" and "array". 
+// If type of the "searchElement" is object or array, you need to convert each element in the "array" to the string and then apply "includes" method with argument that will be also converted to the string.
+// If type of the "searchElement" is not an object or array - simply apply "includes" method and return result
+// */
+
+// const elementIsIncluded = (searchElement, array) => {
+//   if (typeof searchElement !== "object") {
+//     return array.includes(searchElement);
+//   }
+
+//   if (typeof searchElement === "object") {
+//     return array
+//       .map(element => JSON.stringify(element))
+//       .includes(JSON.stringify(searchElement));
+//   }
+// };
+
+// console.log(elementIsIncluded(["css", "flexbox"], tags)); // true
+
+// console.log(elementIsIncluded(["flexbox", "css"], tags)); // false
+
+// console.log(
+//   elementIsIncluded(
+//     { title: "Apple", quantity: 25 },
+//     fruits
+//   )
+// ); // true
+
+// console.log(elementIsIncluded({ title: "Banana" }, fruits)); // false
+
+// console.log(elementIsIncluded(25, primitiveTypesArray)); // true
+
+
+
+
+// 💯 challenge 3-8:push to array if doesn't exist
+const myNumbers = [123, 50, 27];
+
+/* Create a function "pushIfUnique" with two parameters "inputArray" and "newElement".
+If "inputArray" already contains "newElement" print "{newElement} is already in the array" to the console.
+Otherwise push "newElement" to the "inputArray". 
+NOTE: We assume that "inputArray" may contain only primitive variables types
 */
 
-const elementIsIncluded = (searchElement, array) => {
-  if (typeof searchElement !== "object") {
-    return array.includes(searchElement);
-  }
+const pushIfUnique = (inputArray, newElement) =>
+  inputArray.includes(newElement)
+    ? console.log(newElement + " is already in the array")
+    : inputArray.push(newElement);
 
-  if (typeof searchElement === "object") {
-    return array
-      .map(element => JSON.stringify(element))
-      .includes(JSON.stringify(searchElement));
-  }
-};
+pushIfUnique(myNumbers, 50); // "50 is already in the array"
+console.log(myNumbers); // [123, 50, 27]
 
-console.log(elementIsIncluded(["css", "flexbox"], tags)); // true
+pushIfUnique(myNumbers, 80);
+console.log(myNumbers); // [123, 50, 27, 80]
 
-console.log(elementIsIncluded(["flexbox", "css"], tags)); // false
+pushIfUnique(myNumbers, 80); // "80 is already in the array"
+console.log(myNumbers); // [123, 50, 27, 80]
 
-console.log(
-  elementIsIncluded(
-    { title: "Apple", quantity: 25 },
-    fruits
-  )
-); // true
-
-console.log(elementIsIncluded({ title: "Banana" }, fruits)); // false
-
-console.log(elementIsIncluded(25, primitiveTypesArray)); // true
+pushIfUnique(myNumbers, 77);
+console.log(myNumbers); // [123, 50, 27, 80, 77]
