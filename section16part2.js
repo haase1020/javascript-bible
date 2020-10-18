@@ -140,8 +140,16 @@
 //   } */
 
 
-//  🌳 sort()
+//  🌳 sort(): mutates original array
+/*
+1. sorting algorithm
+2. qty of iterations
+*/
 
-const myNumbers = [10,5,7,12,20];
+const myNumbers = [10,5,7,12,20, 27, 50, 14, 11];
 
-console.log(myNumbers.sort((a,b) => a-b))
+
+console.log(myNumbers.sort()) // compares strings of numbers
+console.log(myNumbers.sort((a,b) => a-b)) //sorts ascending
+// 😉: merge sort, bubble sort, quicksort(unstable), insertion sort
+console.log(myNumbers) //stays mutated
