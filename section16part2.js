@@ -189,12 +189,16 @@ const products = [
 This function "sortProductsByPrice" should sort input array of products by price of each product in ascending order and return resulting array.
 */
 
-sortProductsByPrice(products);
-/* Which sorting algorithm is used here in Google Chrome, Firefox, Safari, Node.js? 
-Is this sorting stable or not?
-*/
+sortProductsByPrice = products =>
+products.sort((a,b) =>{
+  console.log(a.price, b.price)
+  return a.price - b.price
+})
+;
 
-console.log(products);
+
+sortProductsByPrice(products);
+console.log(products)
 /* Array of products sorted by price in ascending order.
 Why original "products" array was mutated?
 */
