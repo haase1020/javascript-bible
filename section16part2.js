@@ -140,16 +140,61 @@
 //   } */
 
 
-//  🌳 sort(): mutates original array
-/*
-1. sorting algorithm
-2. qty of iterations
+// //  🌳 sort(): mutates original array
+// /*
+// 1. sorting algorithm
+// insertions sort - google chrome (qty <=10), firefox, node.js (qty <=10)
+// merge sort - safari
+// 2. qty of iterations
+// 13
+// */
+
+// const myNumbers = [10,5,7,12,20, 27, 50, 14, 11];
+
+
+// console.log(myNumbers.sort()) // compares strings of numbers
+// console.log(myNumbers.sort((a,b) => a-b)) //sorts ascending
+// // 😉: merge sort, bubble sort, quicksort(unstable), insertion sort
+// console.log(myNumbers) //stays mutated
+
+// 💯 challenge 3-11: sort() array of objects
+const products = [
+  {
+    title: "Phone case",
+    price: 23,
+    quantity: 2,
+    category: "Accessories"
+  },
+  {
+    title: "Android phone",
+    price: 150,
+    quantity: 1,
+    category: "Phones"
+  },
+  {
+    title: "Headphones",
+    price: 78,
+    quantity: 1,
+    category: "Accessories"
+  },
+  {
+    title: "Sport Watch",
+    price: 55,
+    quantity: 2,
+    category: "Watches"
+  }
+];
+
+/* Create a function "sortProductsByPrice" with one parameter "products".
+This function "sortProductsByPrice" should sort input array of products by price of each product in ascending order and return resulting array.
 */
 
-const myNumbers = [10,5,7,12,20, 27, 50, 14, 11];
+sortProductsByPrice(products);
+/* Which sorting algorithm is used here in Google Chrome, Firefox, Safari, Node.js? 
+Is this sorting stable or not?
+*/
 
-
-console.log(myNumbers.sort()) // compares strings of numbers
-console.log(myNumbers.sort((a,b) => a-b)) //sorts ascending
-// 😉: merge sort, bubble sort, quicksort(unstable), insertion sort
-console.log(myNumbers) //stays mutated
+console.log(products);
+/* Array of products sorted by price in ascending order.
+Why original "products" array was mutated?
+*/
