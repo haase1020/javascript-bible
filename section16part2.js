@@ -282,8 +282,10 @@ const sortPersonsByFriendsQty = persons => {
   return persons;
 }
 sortPersonsByFriendsQty(persons);
-/* Which sorting algorithm is used here in Google Chrome, Firefox, Node.js? 
-Is this sorting stable or not?
+/* Which sorting algorithm is used:
+Firefox: insertion sort /31 iterations (stable)
+Safari: merge sort /29 iterations (stable)
+ Google Chrome: quicksort/ 27 iterations (not stable because over 10 items)
 */
 
 console.log(persons);
