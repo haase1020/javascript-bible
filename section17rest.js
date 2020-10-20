@@ -70,3 +70,13 @@ copiedObject.a=20; //myObject is not mutated
 copiedObject.d.pop(); //myObject is mutated
 console.log(copiedObject);
 console.log(myObject)
+
+
+// 📗 example 6 - spread string
+
+const myStr = "hello world";
+
+const letters = [...myStr];
+console.log("letters",letters);
+const oldStyleLetters = myStr.split("");
+console.log(oldStyleLetters)
