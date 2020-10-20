@@ -39,4 +39,12 @@
 // const anotherPerson = ["NewYork", 200]
 // console.log(myGreeting("Bob", ...anotherPerson))
 
-// 📗 example 2
+// 📗 example 2 - concatenate arrays
+const a = [1,2,3];
+const b = [4,5];
+
+const c = a.concat(b).concat(6);
+console.log(c)
+
+const d = [...a,...b,6]  //easier to read and same outcome
+console.log(d);
