@@ -39,12 +39,34 @@
 // const anotherPerson = ["NewYork", 200]
 // console.log(myGreeting("Bob", ...anotherPerson))
 
-// 📗 example 2 - concatenate arrays
-const a = [1,2,3];
-const b = [4,5];
+// // 📗 example 2 - concatenate arrays
+// const a = [1,2,3];
+// const b = [4,5];
 
-const c = a.concat(b).concat(6);
-console.log(c)
+// const c = a.concat(b).concat(6);
+// console.log(c)
 
-const d = [...a,...b,6]  //easier to read and same outcome
-console.log(d);
+// const d = [...a,...b,6]  //easier to read and same outcome
+// console.log(d);
+
+// // 📗 example 3 - create date
+// const dateInfo = [2025,5,10];
+
+// const date = new Date(...dateInfo);
+// console.log(date)
+
+// 📗 example 4 - copy array
+const myArray = ["a", 5, [], true];
+
+const newArray = [...myArray];
+newArray.push(10); //myArray is not mutates
+newArray[2].push(7) //myArray is mutated
+console.log(newArray);
+
+// 📗 example 5 - copy object (ES2018)
+const myObject = {a:10,b:"c", d:[1,2]};
+const copiedObject = {...myObject };
+copiedObject.a=20; //myObject is not mutated
+copiedObject.d.pop(); //myObject is mutated
+console.log(copiedObject);
+console.log(myObject)
