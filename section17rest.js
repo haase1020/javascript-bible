@@ -120,16 +120,52 @@
 //   meanScore(...scores1, ...scores2, ...scores3)
 // ); // 2.59
 
-// console.log(meanScore(...scores4)); // Supplied arguments must contain only numbers!
+// // console.log(meanScore(...scores4)); // Supplied arguments must contain only numbers!
 
 
-//rest parameter review (collection of all remained elements into an array)
-var myName = ["Marina" , "Magdy" , "Shafiq"] ;
-const [firstName , ...familyName] = myName ;
-console.log(firstName); // Marina ;
-console.log(familyName); // [ "Magdy" , "Shafiq"] ;
+// //rest parameter review (collection of all remained elements into an array)
+// var myName = ["Marina" , "Magdy" , "Shafiq"] ;
+// const [firstName , ...familyName] = myName ;
+// console.log(firstName); // Marina ;
+// console.log(familyName); // [ "Magdy" , "Shafiq"] ;
 
-//spread operator review (unpacks collected elements into single elements)
-var myName = ["Marina" , "Magdy" , "Shafiq"];
-var newArr = [...myName ,"FrontEnd" , 24];
-console.log(newArr) ; // ["Marina" , "Magdy" , "Shafiq" , "FrontEnd" , 24 ] ;
+// //spread operator review (unpacks collected elements into single elements)
+// var myName = ["Marina" , "Magdy" , "Shafiq"];
+// var newArr = [...myName ,"FrontEnd" , 24];
+// console.log(newArr) ; // ["Marina" , "Magdy" , "Shafiq" , "FrontEnd" , 24 ] ;
+
+//  🌳 default function parameters
+
+// // 📗 example 1
+// const multiplier = (num, mult= 2) => {
+//     console.log(num, mult);
+//     return num * mult;
+// };
+
+// console.log(multiplier(10,3));//30
+// console.log(multiplier(5)); //10
+
+// // 📗 example 2
+
+// const groceryItem = (title, qty, item ={ title: title, quantity: qty}) => {
+//     // item = {}; //function parameters are declared and initialized before entering fn body
+//     console.log(title, qty, item);
+// };
+
+// groceryItem("Banana", 5);
+
+// // 📗 example 3
+// const warning = (title) => {
+//     console.log(
+//         title !== undefined ? ` title of button is ${title} but color is not set`: `title and color not set`
+//     )
+//     throw new Error("button needs 2 args - title and color");
+// };
+// const btn = (title = warning(), color = warning()) => {
+//     console.log(title)
+//     //
+// };
+
+// btn("button 1", "pink")
+// btn("button 2")
+// btn()
