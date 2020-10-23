@@ -205,6 +205,7 @@
 /*
 Create a function "tasksSortedByIds" with two parameters "tasks" and "tasksWithIds".
 1. Before performing any actions inside of the function you need to generate unique 4-digit "taskId" for each task where it is missing.
+
 2. At the beginning of the function log to the console quantity of the missing taskIds:
 "Quantity of the missing taskIds is 2"
 3. Function should return array of tasks sorted by "taskId". All tasks in the sorted array must have "taskId".
@@ -212,6 +213,9 @@ NOTE: Original "tasks" array should remain unchanged.
 NOTE: Hints down below!
 BONUS: Ensure that new unique 4-digit "taskId" is not the same as any "taskId" of the existing tasks.
 */
+// ✨generate unique 4-digit number
+// 1000 <= number < 10000
+// 1000 + Math.floor(Math.random() * 9000)
 
 const tasks = [
     { title: "Meeting with John", taskId: 4621 },
