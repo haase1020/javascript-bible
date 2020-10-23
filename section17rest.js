@@ -217,6 +217,19 @@ BONUS: Ensure that new unique 4-digit "taskId" is not the same as any "taskId" o
 // 1000 <= number < 10000
 // 1000 + Math.floor(Math.random() * 9000)
 
+const generateTasksIds = tasks => {
+  return tasks;
+};
+
+const tasksSortedByIds = (
+  tasks, 
+  tasksWithIds = generateTasksIds(tasks)
+) => {
+  console.log(`qty of the missing taskIds
+   is ${tasks.filter(task => !task.hasOwnProperty("taskId")).length}`);
+  return tasksWithIds;
+};
+
 const tasks = [
     { title: "Meeting with John", taskId: 4621 },
     { title: "Visit gym", taskId: 6821 },
