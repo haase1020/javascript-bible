@@ -67,18 +67,40 @@
 // console.log(a,b,c,d);
 
 
-//💯 challenge 6-2
-/*
-Modify parameters section in the "processQuantities" function to match console.log outputs
-*/
+// //💯 challenge 6-2
+// /*
+// Modify parameters section in the "processQuantities" function to match console.log outputs
+// */
 
-const processQuantities = ([minQty,maxQty, defaultQty=0]) => {
-    console.log(minQty); // 8
-    console.log(maxQty); // 29
-    console.log(defaultQty); // 0
-    return maxQty - minQty; // returns 21
-  };
+// const processQuantities = ([minQty,maxQty, defaultQty=0]) => {
+//     console.log(minQty); // 8
+//     console.log(maxQty); // 29
+//     console.log(defaultQty); // 0
+//     return maxQty - minQty; // returns 21
+//   };
   
-  const qtyRange = [8, 29];
+//   const qtyRange = [8, 29];
   
-  console.log(processQuantities(qtyRange));
+//   console.log(processQuantities(qtyRange));
+
+// //💯 challenge 6-3
+// /*
+// Create a function "minMax" that will accept any quantity of the arguments.
+// This function should return array of two elements:
+// 1. First element in the array is minimal value among all arguments
+// 2. Second element in the array is maximal value among all arguments
+// Use destructuring to parse results of the function calls.
+// */
+// const myArray = [24, 5, 34, 10]
+// let min, max;
+// function minMax(array) {
+//    min = Math.min(...array)
+//    max = Math.max(...array)
+//    return min, max
+// }
+// /* call here "minMax" function with arguments 24, 5, 34, 10 */
+// minMax(myArray)
+// console.log(min, max); // 5, 34
+
+// /* call here "minMax" function with arguments 18, 23, 103, 70, 80, 25 */
+// console.log(min, max); // 18, 103
