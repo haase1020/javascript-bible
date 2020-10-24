@@ -61,7 +61,24 @@
 // console.log(`${title} has ${likes} likes`)
 // );
 
-// 📗 example 10: nested array destructuring
-const myArray = [1,2,[3,4]];
-const [a,b,[c,d]] = myArray;
-console.log(a,b,c,d);
+// // 📗 example 10: nested array destructuring
+// const myArray = [1,2,[3,4]];
+// const [a,b,[c,d]] = myArray;
+// console.log(a,b,c,d);
+
+
+//💯 challenge 6-2
+/*
+Modify parameters section in the "processQuantities" function to match console.log outputs
+*/
+
+const processQuantities = ([minQty,maxQty, defaultQty=0]) => {
+    console.log(minQty); // 8
+    console.log(maxQty); // 29
+    console.log(defaultQty); // 0
+    return maxQty - minQty; // returns 21
+  };
+  
+  const qtyRange = [8, 29];
+  
+  console.log(processQuantities(qtyRange));
