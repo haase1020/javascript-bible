@@ -218,11 +218,15 @@ BONUS: Ensure that new unique 4-digit "taskId" is not the same as any "taskId" o
 // 1000 + Math.floor(Math.random() * 9000)
 
 const generateTasksIds = tasks => {
+  let newTaskIds = [];
   return tasks.map(({ ...task}) => {
-    
     if (!task.hasOwnProperty("taskId")) {
-      let newTaskId = 1000 + Math.floor(Math.random() * 9000)
-      task.taskId = newTaskId
+      let newTaskId;
+      do {
+        newTaskId = 1000 + Math.floor(Math.random() * 9000);
+      } while (tasks.find(task => task.taskId === newTaskId) || newTaskIds.includes(newTaskId)
+      );
+      newTaskIds.push(newTaskId);
     }
     return task
   });
