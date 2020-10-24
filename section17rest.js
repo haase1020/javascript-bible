@@ -218,7 +218,14 @@ BONUS: Ensure that new unique 4-digit "taskId" is not the same as any "taskId" o
 // 1000 + Math.floor(Math.random() * 9000)
 
 const generateTasksIds = tasks => {
-  return tasks;
+  return tasks.map(({ ...task}) => {
+    
+    if (!task.hasOwnProperty("taskId")) {
+      let newTaskId = 1000 + Math.floor(Math.random() * 9000)
+      task.taskId = newTaskId
+    }
+    return task
+  });
 };
 
 const tasksSortedByIds = (
@@ -227,7 +234,7 @@ const tasksSortedByIds = (
 ) => {
   console.log(`qty of the missing taskIds
    is ${tasks.filter(task => !task.hasOwnProperty("taskId")).length}`);
-  return tasksWithIds;
+  return tasksWithIds.sort((a,b) => a.taskId - b.taskId);
 };
 
 const tasks = [
