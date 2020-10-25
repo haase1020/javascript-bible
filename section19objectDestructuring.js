@@ -75,11 +75,84 @@
 // const { a, d, ...rest } =myObj; //rest operator must be last item in list
 // console.log(a,d, rest)
 
-// 📗 example 7: non-existing properties
-const myObj = {
-    a: 10,
-    b: true,
+// // 📗 example 7: non-existing properties
+// const myObj = {
+//     a: 10,
+//     b: true,
     
-};
-const { a,b,c } = myObj
-console.log(a,b,c); //c is undefined
+// };
+// const { a,b,c } = myObj
+// console.log(a,b,c); //c is undefined
+
+//  // 📗 example 8: default values
+//  const myObj = {
+//     a: 10,
+//     b: true,
+    
+// };
+// const { a,b,c = "default val" } = myObj
+// console.log(a,b,c); //c has "default value"
+
+//  // 📗 example 9: default values and new variable names
+
+//  const myObj = {
+//     a: 10,
+//     b: true
+// };
+
+// const { 
+//     a:newA, b: newB, c: newC = "default val"
+// } =myObj;
+// console.log(newA,newB,newC)
+
+// // 📗 example 10: next object destructuring
+// const myObj=  {
+//     a: 1,
+//     b: 2,
+//     nestedObject: {
+//         c: 3,
+//         d: 4
+//     }
+// };
+
+// const {a: a, b: b, nestedObject: { c: c, d: d}} = myObj;
+// // const { c: c, d: d} = nestedObject;
+// console.log(a,b,c,d)
+
+// 💯 challenge 6-4
+/*
+Modify "personInfo" function to match console.log output at the end of the challenge.
+Object that is returned by "personInfo" function must contain only shorthand property names.
+*/
+
+const personInfo = ({
+    name, //shorthand since same name 
+    age: personAge, 
+    location:{country: origin, city: homeCity}, 
+    friendsQty= 0, 
+    recordCreatedAt = new Date().getFullYear()
+}) => {
+   return {name, personAge, origin, homeCity, friendsQty, recordCreatedAt
+   }
+  };
+  
+  const person = {
+    name: "Alice",
+    age: 19,
+    location: {
+      country: "England",
+      city: "London"
+    }
+  };
+  
+  console.log(personInfo(person));
+  /*
+  {
+    name: "Alice",
+    personAge: 19,
+    origin: "England",
+    homeCity: "London",
+    friendsQty: 0,
+    recordCreatedAt: *current year*
+  }
+  */
