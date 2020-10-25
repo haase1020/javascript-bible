@@ -158,57 +158,67 @@ Object that is returned by "personInfo" function must contain only shorthand pro
 //   */
 
 
-// 💯 challenge 6-5
+// // 💯 challenge 6-5
+// /*
+// Create "processPosts" function that will return new array of posts.
+// Notice that some propery names in each post are modified and each postId is incremented by 1000.
+// Original array of posts should not be mutated.
+// */
+
+// const posts = [
+//     {
+//       postId: 234,
+//       author: "robd",
+//       commentsQty: 5
+//     },
+//     {
+//       postId: 823,
+//       author: "sady"
+//     },
+//     {
+//       postId: 161,
+//       author: "merryl",
+//       commentsQty: 8
+//     }
+//   ];
+
+//   const processPosts = posts => {
+//       return posts.map(({postId,author: postAuthor, commentsQty: postCommentsQty = 0}) => ({
+//           postAuthor,
+//           postCommentsQty,
+//           postId: postId + 1000
+//       }))
+//   }
+//   console.log(processPosts(posts));
+//   console.log(posts); // original array of posts
+
+// 💯 challenge 6-6
 /*
-Create "processPosts" function that will return new array of posts.
-Notice that some propery names in each post are modified and each postId is incremented by 1000.
-Original array of posts should not be mutated.
+Use object destructuring with rest object properties to quickly remove specific properties from the object.
+Ensure that variables that will be used for destructuring of the deleted properties will not be accessible after the destructuring operation.
 */
 
-const posts = [
-    {
-      postId: 234,
-      author: "robd",
-      commentsQty: 5
-    },
-    {
-      postId: 823,
-      author: "sady"
-    },
-    {
-      postId: 161,
-      author: "merryl",
-      commentsQty: 8
-    }
-  ];
-
-  const processPosts = posts => {
-      return posts.map(({postId,author: postAuthor, commentsQty: postCommentsQty = 0}) => ({
-          postAuthor,
-          postCommentsQty,
-          postId: postId + 1000
-      }))
-  }
+let person = {
+    _id: "5ad8cefcc0971792dacb3f1f",
+    index: 4,
+    processed: false,
+    cart: ["item1", "item2", "item3"],
+    email: "slarsen@test.com",
+    name: "Samanta Larsen",
+    cartId: 435
+  };
+ {
+     let _id, processed, cart;
+ // add parenthesis so JS engine knows its object literal and not block of code
+ ({ _id, processed, cart, ...person } = person);
+}
   
-  console.log(processPosts(posts));
+  console.log(person);
   /*
-  [
-    {
-      postId: 1234,
-      postAuthor: "robd",
-      postCommentsQty: 5
-    },
-    {
-      postId: 1823,
-      postAuthor: "sady",
-      postCommentsQty: 0
-    },
-    {
-      postId: 1161,
-      postAuthor: "merryl",
-      postCommentsQty: 8
-    }
-  ]
+  {
+    index: 4,
+    email: "slarsen@test.com",
+    name: "Samanta Larsen",
+    cartId: 435
+  }
   */
-  
-  console.log(posts); // original array of posts
