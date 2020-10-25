@@ -25,11 +25,26 @@ number, boolean, regexp, promise, map, set, error
 ✨ every fn in JS (except arrow fns) is a constructor fn
 */
 
-// 📗 function constructor example
-//function constructor starts capital letter
-function CivilPlane() {}
+// // 📗 example 1: function constructor example
+// //function constructor starts capital letter
+// function CivilPlane() {}
 
-console.log(CivilPlane.prototype) // {constructor: ƒ}
-console.log(CivilPlane.prototype.constructor === CivilPlane); //true
-console.log(CivilPlane.prototype.__proto__ === Object.prototype);// true
-console.log(CivilPlane.prototype.__proto__.__proto__ === null);// true
+// console.log(CivilPlane.prototype) // {constructor: ƒ}
+// console.log(CivilPlane.prototype.constructor === CivilPlane); //true
+// console.log(CivilPlane.prototype.__proto__ === Object.prototype);// true
+// console.log(CivilPlane.prototype.__proto__.__proto__ === null);// true
+// /*
+// each fn in JS (not arrow) has .prototype property and can be used as a constructor fn
+// */
+
+// 📗 example 2
+function CivilPlane(props) {
+    this.numberOfSeats = props.numberOfSeats
+}
+const propsForSmallPlane = {
+    numberOfSeats: 4
+};
+
+const smallPlane = new CivilPlane(propsForSmallPlane);
+console.log(smallPlane)
+
