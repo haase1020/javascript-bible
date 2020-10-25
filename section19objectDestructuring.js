@@ -125,34 +125,90 @@ Modify "personInfo" function to match console.log output at the end of the chall
 Object that is returned by "personInfo" function must contain only shorthand property names.
 */
 
-const personInfo = ({
-    name, //shorthand since same name 
-    age: personAge, 
-    location:{country: origin, city: homeCity}, 
-    friendsQty= 0, 
-    recordCreatedAt = new Date().getFullYear()
-}) => {
-   return {name, personAge, origin, homeCity, friendsQty, recordCreatedAt
-   }
-  };
+// const personInfo = ({
+//     name, //shorthand since same name 
+//     age: personAge, 
+//     location:{country: origin, city: homeCity}, 
+//     friendsQty= 0, 
+//     recordCreatedAt = new Date().getFullYear()
+// }) => {
+//    return {name, personAge, origin, homeCity, friendsQty, recordCreatedAt
+//    }
+//   };
   
-  const person = {
-    name: "Alice",
-    age: 19,
-    location: {
-      country: "England",
-      city: "London"
+//   const person = {
+//     name: "Alice",
+//     age: 19,
+//     location: {
+//       country: "England",
+//       city: "London"
+//     }
+//   };
+  
+//   console.log(personInfo(person));
+//   /*
+//   {
+//     name: "Alice",
+//     personAge: 19,
+//     origin: "England",
+//     homeCity: "London",
+//     friendsQty: 0,
+//     recordCreatedAt: *current year*
+//   }
+//   */
+
+
+// 💯 challenge 6-5
+/*
+Create "processPosts" function that will return new array of posts.
+Notice that some propery names in each post are modified and each postId is incremented by 1000.
+Original array of posts should not be mutated.
+*/
+
+const posts = [
+    {
+      postId: 234,
+      author: "robd",
+      commentsQty: 5
+    },
+    {
+      postId: 823,
+      author: "sady"
+    },
+    {
+      postId: 161,
+      author: "merryl",
+      commentsQty: 8
     }
-  };
-  
-  console.log(personInfo(person));
-  /*
-  {
-    name: "Alice",
-    personAge: 19,
-    origin: "England",
-    homeCity: "London",
-    friendsQty: 0,
-    recordCreatedAt: *current year*
+  ];
+
+  const processPosts = posts => {
+      return posts.map(({postId,author: postAuthor, commentsQty: postCommentsQty = 0}) => ({
+          postAuthor,
+          postCommentsQty,
+          postId: postId + 1000
+      }))
   }
+  
+  console.log(processPosts(posts));
+  /*
+  [
+    {
+      postId: 1234,
+      postAuthor: "robd",
+      postCommentsQty: 5
+    },
+    {
+      postId: 1823,
+      postAuthor: "sady",
+      postCommentsQty: 0
+    },
+    {
+      postId: 1161,
+      postAuthor: "merryl",
+      postCommentsQty: 8
+    }
+  ]
   */
+  
+  console.log(posts); // original array of posts
