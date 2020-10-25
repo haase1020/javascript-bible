@@ -24,3 +24,12 @@ number, boolean, regexp, promise, map, set, error
 ✨ every function is an instance for Function.prototype 
 ✨ every fn in JS (except arrow fns) is a constructor fn
 */
+
+// 📗 function constructor example
+//function constructor starts capital letter
+function CivilPlane() {}
+
+console.log(CivilPlane.prototype) // {constructor: ƒ}
+console.log(CivilPlane.prototype.constructor === CivilPlane); //true
+console.log(CivilPlane.prototype.__proto__ === Object.prototype);// true
+console.log(CivilPlane.prototype.__proto__.__proto__ === null);// true
