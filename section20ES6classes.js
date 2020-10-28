@@ -52,4 +52,71 @@ const props = {
 const newInstance = new MyClass(props); // that's all- you don't need to write newinstance.info
 ✨ refer to classes vs. function constructors lecture to see how to extend another class✨
 
+// /*
+// 📗 Example 1
+// Class declaration and instance of the Class
+// */
+// class myClass {
+
+// }
+// const firstInstance = new myClass();
+
+// console.log(firstInstance);
+
+// /*
+// 📗 Example 2
+// Hoisting: class can be accessed only after it's declaration in the code
+// */
+
+// const firstInstance = new myClass(); // declared but not initialized so get error
+// class myClass {
+
+// }
+
+// /*
+// 📗 Example 3
+// Class Expression
+// */
+
+// const MyClass = class {}; // class expression is same as declaration
+
+// const firstInstance = new McClass();
+
+// console.log(firstInstance);
+
+// /*
+// 📗 Example 3
+// constructor method in the class
+// */
+
+// class ComputerMouse {
+//     constructor(props) {
+//         this.type = props.type;
+//         this.color = props.color;
+//         this.interface = props.interface;
+//     }
+// }
+
+// const propsForWirelessMouse = {
+//     type: "wireless",
+//     color: "white",
+//     interface: "bluetooth"
+// };
+
+// const wirelessMouse = new ComputerMouse(
+//     propsForWirelessMouse
+// );
+
+// console.log(wirelessMouse)
+
+
+/*
+📗 Example 4
+Class is NOT object literal and it's methods are not shorthand method names
 */
+//correct format
+class ComputerMouse {
+    constructor() {} // no commas
+    method1() {}
+    method2(props) {}
+}
