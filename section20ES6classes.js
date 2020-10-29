@@ -85,7 +85,7 @@ const newInstance = new MyClass(props); // that's all- you don't need to write n
 // console.log(firstInstance);
 
 // /*
-// 📗 Example 3
+// 📗 Example 4
 // constructor method in the class
 // */
 
@@ -111,7 +111,7 @@ const newInstance = new MyClass(props); // that's all- you don't need to write n
 
 
 /*
-📗 Example 4
+📗 Example 5
 Class is NOT object literal and it's methods are not shorthand method names
 */
 //correct format
@@ -120,3 +120,35 @@ class ComputerMouse {
     method1() {}
     method2(props) {}
 }
+
+
+
+/*
+📗 Example 6
+default values for properties
+*/
+class ComputerMouse {
+    constructor(props) {
+        this.type = props.type || "Computer";
+        this.color = props.color;
+        this.interface = props.interface;
+    }
+}
+
+const propsForWirelessMouse = {
+    type: "wireless",
+    color: "white",
+    interface: "bluetooth"
+};
+
+const wirelessMouse = new ComputerMouse(
+    propsForWirelessMouse
+);
+
+const propsForGenericMouse = {
+    color: "red"
+};
+
+const genericMouse = new ComputerMouse(propsForGenericMouse);
+
+console.log(genericMouse)
