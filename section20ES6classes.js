@@ -110,16 +110,16 @@ const newInstance = new MyClass(props); // that's all- you don't need to write n
 // console.log(wirelessMouse)
 
 
-/*
-📗 Example 5
-Class is NOT object literal and it's methods are not shorthand method names
-*/
-//correct format
-class ComputerMouse {
-    constructor() {} // no commas
-    method1() {}
-    method2(props) {}
-}
+// /*
+// 📗 Example 5
+// Class is NOT object literal and it's methods are not shorthand method names
+// */
+// //correct format
+// class ComputerMouse {
+//     constructor() {} // no commas
+//     method1() {}
+//     method2(props) {}
+// }
 
 
 
@@ -131,7 +131,7 @@ class ComputerMouse {
     constructor(props) {
         this.type = props.type || "Computer";
         this.color = props.color;
-        this.interface = props.interface;
+        this.interface = props.interface !== undefined? props.interface: "not specified";
     }
 }
 
