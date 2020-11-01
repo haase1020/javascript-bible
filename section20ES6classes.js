@@ -196,27 +196,79 @@ const newInstance = new MyClass(props); // that's all- you don't need to write n
  * Try this.
  */
 
-class CustomArray extends Array {
-    customPush(newElement) {
-      console.log(`Initial length is ${this.length}`);
-      this[this.length] = newElement;
-      console.log(
-        `Updated length of the array is ${this.length}`
-      ); // length property is updated automatically
+// class CustomArray extends Array {
+//     customPush(newElement) {
+//       console.log(`Initial length is ${this.length}`);
+//       this[this.length] = newElement;
+//       console.log(
+//         `Updated length of the array is ${this.length}`
+//       ); // length property is updated automatically
   
-      console.log(
-        `New element ${newElement} was just added to the array`
-      );
-    }
-  }
+//       console.log(
+//         `New element ${newElement} was just added to the array`
+//       );
+//     }
+//   }
   
-  const firstInstance = new CustomArray();
+//   const firstInstance = new CustomArray();
   
-  firstInstance.customPush(1);
+//   firstInstance.customPush(1);
   
-  console.log(firstInstance); // [1]
+//   console.log(firstInstance); // [1]
   
-  firstInstance.customPush(10);
+//   firstInstance.customPush(10);
   
-  console.log(firstInstance); // [1, 10]
+//   console.log(firstInstance); // [1, 10]
   
+
+/**
+ * 💯 CHALLENGE 7-6 - TASK
+ *
+ * Add one more button with color "secondary".
+ * Also change styles of the existing and new buttons
+ * using property "variant".
+ *
+ * You can use one of the following values:
+ * "text", "flat", "outlined", "contained", "raised", "fab", "extendedFab"
+ */
+// class MyButton extends React.Component {
+//     constructor(props) {
+//       super(props);
+//       this.state = { clickedQty: 0 };
+//     }
+  
+//     render() {
+//       return React.createElement(
+//         window["material-ui"].Button,
+//         {
+//           variant: "contained",
+//           color: this.props.color,
+//           onClick: () =>
+//             this.setState({
+//               clickedQty: ++this.state.clickedQty
+//             })
+//         },
+//         this.state.clickedQty > 0
+//           ? `Button was clicked ${
+//               this.state.clickedQty
+//             } times`
+//           : "Click me!!!"
+//       );
+//     }
+//   }
+  
+//   const button1 = React.createElement(MyButton, {
+//     color: "primary"
+//   });
+  
+//   const buttonContainer1 = document.getElementById("button1");
+  
+//   ReactDOM.render(button1, buttonContainer1);
+
+//   const button2 = React.creatElement(MyButton,{
+//       color: "secondary"
+//   });
+
+//   const buttonContainer2 = document.getElementById("button2");
+
+//   ReactDOM.render(button2, buttonContainer2)
