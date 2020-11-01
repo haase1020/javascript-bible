@@ -1,0 +1,23 @@
+{
+  "name": "javascript-bible",
+  "version": "1.0.0",
+  "description": "tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haase1020/javascript-bible.git"
+  },
+  "author": "Mandi Haase",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haase1020/javascript-bible/issues"
+  },
+  "homepage": "https://github.com/haase1020/javascript-bible#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browserslist": "^4.14.6"
+  }
+}
