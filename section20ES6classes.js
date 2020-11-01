@@ -53,102 +53,71 @@ const newInstance = new MyClass(props); // that's all- you don't need to write n
 ✨ refer to classes vs. function constructors lecture to see how to extend another class✨
 
 // /*
-// 📗 Example 1
-// Class declaration and instance of the Class
-// */
-// class myClass {
-
-// }
-// const firstInstance = new myClass();
-
-// console.log(firstInstance);
-
-// /*
-// 📗 Example 2
-// Hoisting: class can be accessed only after it's declaration in the code
+// 💯 Challenge 1 (7-3)
+// Convert function constructors to Classes
 // */
 
-// const firstInstance = new myClass(); // declared but not initialized so get error
-// class myClass {
-
-// }
-
-// /*
-// 📗 Example 3
-// Class Expression
-// */
-
-// const MyClass = class {}; // class expression is same as declaration
-
-// const firstInstance = new McClass();
-
-// console.log(firstInstance);
-
-// /*
-// 📗 Example 4
-// constructor method in the class
-// */
-
-// class ComputerMouse {
-//     constructor(props) {
-//         this.type = props.type;
-//         this.color = props.color;
-//         this.interface = props.interface;
-//     }
-// }
-
-// const propsForWirelessMouse = {
-//     type: "wireless",
-//     color: "white",
-//     interface: "bluetooth"
-// };
-
-// const wirelessMouse = new ComputerMouse(
-//     propsForWirelessMouse
-// );
-
-// console.log(wirelessMouse)
-
-
-// /*
-// 📗 Example 5
-// Class is NOT object literal and it's methods are not shorthand method names
-// */
-// //correct format
-// class ComputerMouse {
-//     constructor() {} // no commas
-//     method1() {}
-//     method2(props) {}
-// }
-
-
-
-/*
-📗 Example 6
-default values for properties
-*/
-class ComputerMouse {
-    constructor(props) {
-        this.type = props.type || "Computer";
-        this.color = props.color;
-        this.interface = props.interface !== undefined? props.interface: "not specified";
+class Product {
+    constructor({ price }) {
+      this.price = price;
     }
-}
-
-const propsForWirelessMouse = {
-    type: "wireless",
-    color: "white",
-    interface: "bluetooth"
-};
-
-const wirelessMouse = new ComputerMouse(
-    propsForWirelessMouse
-);
-
-const propsForGenericMouse = {
-    color: "red"
-};
-
-const genericMouse = new ComputerMouse(propsForGenericMouse);
-
-console.log(genericMouse)
+  
+    priceInfo() {
+      console.log(`Price of the product is ${this.price}`);
+    }
+  }
+  
+  class ElectricDevice extends Product {
+    constructor(props) {
+      super(props);
+      this.energyEfficiencyClass =
+        props.energyEfficiencyClass;
+    }
+  
+    energyInfo() {
+      console.log(
+        `Energy Efficiency Class is ${
+          this.energyEfficiencyClass
+        }`
+      );
+    }
+  }
+  
+  class TV extends ElectricDevice {
+    constructor(props) {
+      super(props);
+      this.model = props.model;
+      this.diagonal = props.diagonal;
+    }
+  }
+  
+  const propsForMyTv = {
+    model: "A1620",
+    price: 1200,
+    energyEfficiencyClass: "A+",
+    diagonal: 42
+  };
+  
+  const myTV = new TV(propsForMyTv);
+  
+  /**
+   * VERIFICATION
+   */
+  
+  console.log(myTV);
+  /* {
+    model: "A1620",
+    price: 1200,
+    energyEfficiencyClass: "A+",
+    diagonal: 42,
+    __proto__: ...
+  } */
+  
+  myTV.energyInfo(); // "Energy Efficiency Class is A+"
+  
+  myTV.priceInfo(); // Price of the product is 1200
+  
+  myTV instanceof TV; // true
+  myTV instanceof ElectricDevice; // true
+  myTV instanceof Product; // true
+  myTV instanceof Object; // true
