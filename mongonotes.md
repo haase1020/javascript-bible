@@ -30,3 +30,33 @@ https://robomongo.org/
 - double quotes not required
 - JSON.parse() converts JSON to JS object
 - JSON.stringify() converts JS object to JSON
+
+## BSON format
+
+- documents in the db are stored in binary json format
+
+## Extended JSON
+
+- a format that is used to represent BJSON data types. Extended JSON is a cross between JSON and BSOON
+
+## db.createCollection("name")
+
+## examples from mongo shell (typed in git bash)
+
+MongoDB shell version v4.2.10
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("9a165e45-dc42-4058-b49d-5997209838b2") }
+MongoDB server version: 4.2.10
+show dbs
+admin 0.000GB
+config 0.000GB
+local 0.000GB
+user forum
+2020-11-04T04:18:29.269-0500 E QUERY [js] uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:5
+use forum
+switched to db forum
+db.createCollection("posts")
+{ "ok" : 1 }
+show collections
+posts
