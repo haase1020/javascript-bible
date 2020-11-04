@@ -20,3 +20,13 @@ https://robomongo.org/
 ## JSON
 
 - JS Object Notation
+- used for data exchange, and is a string
+- double quotes required
+
+## JS Object
+
+- variable type
+- it is an object/ NOT a string
+- double quotes not required
+- JSON.parse() converts JSON to JS object
+- JSON.stringify() converts JS object to JSON
