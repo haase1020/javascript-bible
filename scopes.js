@@ -19,10 +19,10 @@
 //undeclared variable
 //use strict mode to avoid accidentally assigning global variables in a fn
 
-function myFn1() {
-  a = true; // in strict will get ReferenceError
-  console.log(a);
-}
+// function myFn1() {
+//   a = true; // in strict will get ReferenceError
+//   console.log(a);
+// }
 
-myFn1();
-console.log(a);
+// myFn1();
+// console.log(a);
