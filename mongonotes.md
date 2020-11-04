@@ -16,3 +16,7 @@ https://stackoverflow.com/questions/59743577/is-there-anyway-to-query-mongodb-in
 ## MongoDB Shell and Robo3T
 
 https://robomongo.org/
+
+## JSON
+
+- JS Object Notation
