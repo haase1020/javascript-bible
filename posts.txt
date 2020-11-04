@@ -1,6 +1,12 @@
 🏡The following posts were used to practice these commands in mongodb:
   ✅db.posts.insertOne(doc);
   ✅db.posts.insertMany(docArray);
+  ✅db.posts.find({}); // returns everything
+  ✅db.posts.findOne();
+  ✅ embedded object uses dot notation but then need double quotes:
+    db.getCollection('posts').find({"author.name": "Emily Watson"})
+  ✅ for tags key and then value in array:
+    db.getCollection('posts').find({tags: "programming"})
 
 {
   title: "What is the best way to learn JavaScript from the ground up?",
